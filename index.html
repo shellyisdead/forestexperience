@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Overlay per sbloccare l’audio -->
+    <div id="audioUnlock"></div>
+
+    <!-- Testo iniziale -->
+    <div id="introText">headphones on for a better experience</div>
+
+<img id="fmodLogo" src="fmodlogo.png" style="
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    opacity: 0;
+    transition: opacity 800ms ease;
+    pointer-events: none;
+    z-index: 9999;
+">
+
+
+    <!-- Tap to begin -->
+    <div id="tapText">tap to begin</div>
+
+    <!-- Sliders -->
+    <div id="uiContainer">
+        <div class="sliderBlock">
+            <label>Animals</label>
+            <input id="animalsSlider" type="range" min="0" max="1" step="0.01" value="0">
+        </div>
+
+        <div class="sliderBlock">
+            <label>Rain</label>
+            <input id="rainSlider" type="range" min="0" max="1" step="0.01" value="0">
+        </div>
+    </div>
+
+    <!-- Pulsante WALK -->
+    <button id="walkButton">WALK</button>
+
+    <!-- Floating text -->
+    <div id="floatingTextContainer"></div>
+
+    <!-- Testo della cabin -->
+    <div id="cabinText">you reached a lonely wooden cabin in the middle of the forest</div>
+
+    <!-- Pulsante KNOCK -->
+    <button id="knockButton">KNOCK</button>
+
+    <!-- FMOD runtime -->
+    <script src="fmodstudio.js"></script>
+
+    <!-- Audio logic -->
+    <script src="main.js"></script>
+
+    <!-- UI animations -->
+    <script src="ui.js"></script>
+
+</body>
+</html>

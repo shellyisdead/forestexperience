@@ -1,0 +1,130 @@
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Elements that must NOT block clicks */
+#introText,
+#tapText,
+#floatingTextContainer,
+.floatingText {
+    pointer-events: none;
+}
+
+/* Elements that MUST receive clicks */
+#uiContainer,
+#walkButton,
+#cabinText,
+#knockButton {
+    pointer-events: auto;
+}
+
+/* Audio unlock overlay */
+#audioUnlock {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: transparent;
+}
+
+/* Intro text */
+#introText {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* Tap to begin */
+#tapText {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* Sliders */
+#uiContainer {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.sliderBlock {
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+/* Walk button */
+#walkButton {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    background: white;
+    color: black;
+    border: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 10; /* <-- PROTEZIONE */
+}
+
+/* Floating text */
+#floatingTextContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* <-- NON sopra WALK */
+}
+
+.floatingText {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* Cabin text */
+#cabinText {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 999; /* <-- CABIN SEMPRE SOPRA TUTTO */
+    pointer-events: none; /* <-- NON blocca input */
+}
+/* Knock button */
+#knockButton {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    background: white;
+    color: black;
+    border: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 10;
+    pointer-events: none; /* <-- FIX */
+}
