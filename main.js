@@ -1906,6 +1906,11 @@ document.querySelectorAll(".floatingText, .runFloating").forEach(n => {
   } catch(e){
     console.warn("triggerSafeEnding error", e);
   }
+
+setTimeout(() => {
+  window.location.href = "https://www.alessioruscelli.com";
+}, 3000);
+
 }
 
 
